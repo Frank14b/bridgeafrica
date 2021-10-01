@@ -6,6 +6,8 @@ use Livewire\Component;
 
 use App\Models\Product;
 
+use Auth;
+
 class Products extends Component
 {
     public $products, $title, $body, $product_id;
@@ -111,6 +113,8 @@ class Products extends Component
         $this->price = '';
 
         $this->qte = '';
+
+        $this->use_id = '';
     }
 
      
@@ -140,7 +144,6 @@ class Products extends Component
             'ref' => 'required',
 
             'qte' => 'required',
-
         ]);
 
    
@@ -156,6 +159,8 @@ class Products extends Component
             'price' => $this->price,
 
             'qte' => $this->qte,
+
+            'use_id' => Auth::user()->id,
 
         ]);
 

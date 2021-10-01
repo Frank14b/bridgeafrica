@@ -22,5 +22,6 @@ class Product extends Model
         'price',
         'qte',
         'profile',
+        'use_id',
     ];
 }

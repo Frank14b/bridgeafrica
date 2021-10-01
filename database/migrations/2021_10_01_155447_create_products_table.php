@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->string('ref');
+            $table->foreignId('use_id')->references('id')->on('users'); 
             $table->boolean('status')->default(1);
             $table->text('profile_path')->nullable();
             $table->integer('price')->default(0);
